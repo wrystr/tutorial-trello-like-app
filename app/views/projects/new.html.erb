@@ -1,0 +1,13 @@
+<%= turbo_frame_tag "modal" do %>
+  <%= render ModalComponent.new do %>
+
+    <%= render HeaderComponent.new("New project") do %>
+      <%= link_to "Back", projects_path, class: "text-blue-600" %>
+    <% end %>
+
+    <div class="max-w-2xl">
+      <%= render "form", project: @project %>
+    </div>
+
+  <% end %>
+<% end %>

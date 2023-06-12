@@ -1,0 +1,6 @@
+<%= render CardComponent.new(card.title, id: dom_id(card)) do %>
+  <div class="flex gap-3">
+    <%= link_to "Edit", edit_card_path(card), class: "text-blue-600", data: { turbo_frame: "modal" } %>
+    <%= link_to "Show", card, class: "text-blue-600" %>
+  </div>
+<% end %>

@@ -1,0 +1,19 @@
+<div>
+  <%= render HeaderComponent.new(@project.name) do %>
+
+    <div class="flex justify-between items-center">
+      <div class="text-gray-400">
+        <%= @project.summary %>
+      </div>
+
+      <div class="flex gap-3">
+        <%= link_to "Back", projects_path, class: "btn-secondary" %>
+        <%= link_to "Add card", new_card_path(project_id: @project.id), class: "btn-primary", data: { turbo_frame: "modal" } %>
+      </div>
+    </div>
+  <% end %>
+
+  <%= render DeckComponent.new("cards") do %>
+    <%= render @project.cards %>
+  <% end %>
+</div>

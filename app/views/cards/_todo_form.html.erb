@@ -1,0 +1,8 @@
+<div class="nested-form-wrapper flex items-center gap-3" data-new-record="<%= f.object.content.nil? %>">
+  <%= f.check_box :status %>
+  <%= f.text_field :content %>
+  <div class="shrink-0">
+    <button type="button" data-action="nested-form#remove">Remove</button>
+    <%= f.hidden_field :_destroy %>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<div>
+  <%= render HeaderComponent.new("All cards")%>
+  <%= render DeckComponent.new("cards") do %>
+    <% @cards.each do |card| %>
+      <%= render "card", card: card %>
+    <% end %>
+  <% end %>
+</div>

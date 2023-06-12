@@ -1,0 +1,6 @@
+<%= turbo_frame_tag "modal" do %>
+  <%= render ModalComponent.new do %>
+    <%= render HeaderComponent.new("New card") %>
+    <%= render "form", card: @card %>
+  <% end %>
+<% end %>

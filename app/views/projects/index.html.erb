@@ -1,0 +1,9 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render HeaderComponent.new("Projects list") do %>
+  <%= link_to "New project", new_project_path, class: "text-blue-600", data: { turbo_frame: "modal" } %>
+<% end %>
+
+<%= render DeckComponent.new("projects") do %>
+  <%= render @projects %>
+<% end %>
