@@ -75,8 +75,7 @@ class CardsController < ApplicationController
         :content,
         :status,
         :_destroy
-      ],
-      quotes_attributes: [:quote, :_destroy],
+      ]
     )
   end
 end

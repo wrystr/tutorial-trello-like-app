@@ -14,9 +14,16 @@
     <h1 class="font-semibold text-lg">Tasks</h1>
     <%= render "todo" %> 
   </div>
-  <div>
-    <h1 class="font-semibold text-lg">Comments</h1>
-    <%= render "quote" %>
-  </div>
+  <h1 class="font-semibold text-lg">Comments</h1>
+  <%= turbo_frame_tag :comments do %>
+    <%= render @card.comments %>
+  <% end %>
+</div>
+
+<div id="comment_form">
+  <%= render "comments/form", comment: @card.comments.new %>
+</div>
+
+
 
 </div>
