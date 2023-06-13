@@ -60,22 +60,23 @@ class CardsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_card
-      @card = Card.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_card
+    @card = Card.find(params[:id])
+  end
 
-    # Only allow a list of trusted parameters through.
-    def card_params
-      params.require(:card).permit(
-        :project_id,
-        :title,
-        :body,
-        todos_attributes: [
-          :content,
-          :status,
-          :_destroy,
-        ]
-      )
-    end
+  # Only allow a list of trusted parameters through.
+  def card_params
+    params.require(:card).permit(
+      :project_id,
+      :title,
+      :body,
+      todos_attributes: [
+        :content,
+        :status,
+        :_destroy
+      ],
+      quotes_attributes: [:quote, :_destroy],
+    )
+  end
 end

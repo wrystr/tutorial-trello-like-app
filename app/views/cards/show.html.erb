@@ -10,27 +10,13 @@
     <%= @card.body %>
   </div>
 
-  <div id="todos" class="py-6">
-    <%= form_with model: @card, data: { controller: 'nested-form', nested_form_wrapper_selector_value: '.nested-form-wrapper' }, class: "space-y-3" do |form| %>
-
-      <template data-nested-form-target="template">
-        <%= form.fields_for :todos, Todo.new, child_index: 'NEW_RECORD' do |todo_fields| %>
-          <%= render "todo_form", f: todo_fields %>
-        <% end %>
-      </template>
-
-      <%= form.fields_for :todos do |todo_fields| %>
-        <%= render "todo_form", f: todo_fields %>
-      <% end %>
-
-      <div data-nested-form-target="target" class=""></div>
-
-      <button type="button" data-action="nested-form#add" class="btn-secondary">Add todo</button>
-
-      <div class="py-6">
-        <%= form.submit class: "btn-primary" %>
-      </div>
-
-    <% end %>
+  <div>
+    <h1 class="font-semibold text-lg">Tasks</h1>
+    <%= render "todo" %> 
   </div>
+  <div>
+    <h1 class="font-semibold text-lg">Comments</h1>
+    <%= render "quote" %>
+  </div>
+
 </div>
