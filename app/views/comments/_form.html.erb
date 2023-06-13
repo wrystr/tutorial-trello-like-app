@@ -1,0 +1,14 @@
+<%= form_with model: comment do |form| %>
+  <div>
+    <%= form.hidden_field :card_id %>
+  </div>
+  <div>
+    <%= form.text_area :body %>
+  </div>
+
+  <div class="my-2">
+
+    <%= form.submit class: "btn-primary" %>
+  </div>
+<% end %>
+
